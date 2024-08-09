@@ -1,11 +1,11 @@
 const express = require('express');
-const router = express.Router();
+const routerResposta = express.Router();
 
 const RespostaController = require('../controllers/RespostaController');
 
-router.get('/respostas', RespostaController.getAllRespostas);
-router.post('/respostas', RespostaController.createResposta);
-router.put('/respostas/:id', RespostaController.updateResposta);
-router.delete('/respostas/:id', RespostaController.deleteResposta);
+routerResposta.get('/', RespostaController.getAllRespostas);
+routerResposta.post('/', RespostaController.createResposta);
+routerResposta.put('/:id', RespostaController.updateResposta);
+routerResposta.delete('/:id', RespostaController.deleteResposta);
 
-module.exports = router;
+module.exports = routerResposta;

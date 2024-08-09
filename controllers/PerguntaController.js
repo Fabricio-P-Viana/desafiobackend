@@ -11,6 +11,8 @@ const getAllPerguntas = async (req,res) =>{
 
 const createPergunta = async (req,res) =>{
     try {
+        console.log(req.body);
+        
         const pergunta = await Pergunta.create(req.body);
         res.status(200).json(pergunta);
     } catch (error) {
