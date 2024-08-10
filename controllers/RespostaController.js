@@ -1,4 +1,4 @@
-const { Resposta } = require('../models');
+const { Pergunta,Resposta } = require('../models');
 
 const getAllRespostas = async (req,res) =>{
     try {
@@ -59,10 +59,33 @@ const deleteResposta = async (req, res) => {
     }
 };
 
+const getRespostasByPerguntaId = async (req, res) => {
+    try {
+        const { perguntaId } = req.params;
+        
+        const canal = await Pergunta.findOne({
+            where: { id: perguntaId },
+            include: [
+                {
+                    model: Resposta,
+                    as: 'respostas'   
+                }
+            ]
+        });
 
+        if (!canal) {
+            return res.status(404).json({ error: 'Canal não encontrado' });
+        }
+
+        res.status(200).json(canal);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
 module.exports = {
     getAllRespostas,
     createResposta,
     updateResposta,
-    deleteResposta
+    deleteResposta,
+    getRespostasByPerguntaId
 }

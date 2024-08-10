@@ -59,7 +59,6 @@ const deleteCanal = async (req, res) => {
     }
 };
 
-
 module.exports = {
     getAllCanais,
     createCanal,
