@@ -52,16 +52,18 @@ Clone os Repositórios:
 ```
 - git clone https://github.com/Fabricio-P-Viana/desafiobackend
 - git clone https://github.com/Fabricio-P-Viana/desafiofrontend
-Instale as Dependências:
 ```
+
+Instale as Dependências:
 ```
 npm install
 ```
 
-Configure o Banco de Dados:
+Configure o Banco de Dados no back-end:
 
-Crie um banco de dados PostgreSQL.
+Crie um banco de dados PostgreSQL com nome nps_db.
 Configure as variáveis de ambiente no arquivo .env.
+defina a porta do app para 3333
 Exemplo de .env:
 ```
 DB_USERNAME=postgres
@@ -71,7 +73,6 @@ HOST=127.0.0.1
 PORT=5432
 DIALECT=postgres
 APP_PORT=3333
-Execute as Migrações:
 ```
 logo após faça as migrations do sequelize:
 ```
@@ -97,13 +98,13 @@ npx sequelize db:migrate
 # 🚀 Como Rodar o Projeto
 Inicie o Servidor Backend:
 ```
-npm run start
+npm run dev
 ```
 Inicie o Servidor Frontend:
 ```
 npm run dev
 ```
-Acesse a Aplicação:
+Acesse a Aplicação front-end:
 
 Abra o navegador e acesse http://localhost:3000.
 # 💡 Considerações Finais
