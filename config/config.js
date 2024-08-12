@@ -7,7 +7,8 @@ module.exports = {
     database: process.env.DATABASE,
     port: process.env.PORT,
     host: process.env.HOST,
-    dialect: process.env.DIALECT
+    dialect: "sqlite",
+    storage: "./database.sqlite"
   },
   test: {
     username: process.env.DB_USERNAME,
